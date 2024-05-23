@@ -6,6 +6,7 @@ export default function Blood() {
     const [selectBlood, setSelectBlood] = useState('')
     const [bloodData, setBloodData] = useState([])
     const [filteredBlood,setFilteredBlood] = useState([])
+    const [isVisible,setIsVisible] = useState(false)
 
     useEffect(() => {
         axios.get(`http://localhost:3001/blood/get`)
@@ -38,6 +39,7 @@ export default function Blood() {
             break;
             default : return selectBlood
         }
+        setIsVisible(true)
     }
     return (
         <div className='blood-select-div'>
@@ -55,7 +57,7 @@ export default function Blood() {
             <button onClick={handleSelectBlood}>Get Details</button>
             
             
-            <div style={{display:'flex'}}>
+            {/* <div style={{display:'flex'}}>
             {filteredBlood.map(e=>(
                 <ul key={e.id} style={{margin:'50px'}}>
                     <li style={{listStyleType:'none'}}>Name:</li>
@@ -70,7 +72,30 @@ export default function Blood() {
                     <li style={{listStyleType:'none'}}>{e.contact}</li><br/><br/>
                 </ul>
             ))}
-            </div>
+            </div> */}
+
+           {isVisible &&  <table border='1px' style={{margin:'50px'}}>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                        <th>Blood Group</th>
+                        <th>Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {filteredBlood.map(e=>(
+                        <tr key={e.id}>
+                            <td>{e.name}</td>
+                            <td>{e.age}</td>
+                            <td>{e.city}</td>
+                            <td>{e.bloodGroup}</td>
+                            <td>{e.contact}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>}
         </div>
     )
 }

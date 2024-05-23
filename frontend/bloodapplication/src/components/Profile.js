@@ -11,8 +11,8 @@ export default function Profile() {
     }
     return (
         <div>
-                <h1>Welcome</h1> <h3>{auth.user}</h3> 
-                <button className='btn-logout' onClick={handleLogout}>Logout</button>
+                <h1 style={{marginBottom:'10px'}}>Welcome</h1> <h3 style={{marginBottom:'10px'}}>{auth.user}</h3> 
+                <button className='btn-logout' style={{border:'none',padding:'10px 15px', backgroundColor:'rgb(143, 27, 27)',borderRadius:'8px',color:'white',cursor:'pointer'}} onClick={handleLogout}>Logout</button>
             </div>
         
     )

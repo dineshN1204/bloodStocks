@@ -59,6 +59,7 @@
 .home-img{
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 .home-text{
@@ -83,6 +84,12 @@
   cursor: pointer;
 }
 
+/* -----about page ----- */
+
+.footer{
+  margin-top: 20px;
+  background-color: white;
+}
 
 /* ----navbar----- */
 
@@ -96,7 +103,7 @@
 }
 
 
-.main-nav>a.active{
+.main-nav a.active{
   background-color: rgb(143, 27, 27);
   color: white;
   border-radius: 8px;
@@ -108,12 +115,18 @@
 
 
 
-/* ------blood page ------ */
 
-.blood-select-div {
-}
+/* ------blood page ------ */
 
 .blood-select{
   margin-top: 30px;
   margin-bottom: 20px;
+}
+table{
+  margin: 0 auto 0 auto;
+  border-collapse: collapse;
+}
+
+td,th{
+  padding: 10px 15px;
 }
